@@ -1,0 +1,21 @@
+overwrite: true
+schema: ./server/schema.graphql
+documents: ./client/src/**/*.graphql
+#  config:
+#    avoidOptionals: true
+#    immutableTypes: true
+generates:
+  ./client/src/base-types.ts:
+    plugins:
+      - typescript
+      - fragment-matcher
+  ./client/:
+    preset: near-operation-file
+    presetConfig:
+      baseTypesPath: ../client/src/base-types.ts
+    plugins:
+      - typescript-operations
+#     - typescript-compatibility
+      - typescript-apollo-angular
+    config:
+      preResolveTypes: true

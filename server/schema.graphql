@@ -1,0 +1,17 @@
+type Query{
+  getRegions:[Region]
+}
+
+type Region{
+  name: String!
+}
+
+input RegionInput{
+  name:String
+}
+
+
+type Mutation {
+  addRegion(place: RegionInput!): Region
+}
+

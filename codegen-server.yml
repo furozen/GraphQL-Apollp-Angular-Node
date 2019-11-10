@@ -1,0 +1,17 @@
+overwrite: true
+schema: ./server/schema.graphql
+
+generates:
+
+  ./server/server-types.ts:
+
+    plugins:
+      - typescript
+      - fragment-matcher
+      - typescript-resolvers
+    config:
+      contextType: ./#Context
+
+
+
+
